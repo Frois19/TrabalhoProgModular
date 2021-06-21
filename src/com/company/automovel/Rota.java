@@ -7,8 +7,8 @@ public class Rota {
     private int kmRota;
 
     public Rota(Date data, int kmRota){
-        setData(data);
-        setKmRota(kmRota);
+        this.data = data;
+        this.kmRota = kmRota;
     }
 
     public Date getData() {
