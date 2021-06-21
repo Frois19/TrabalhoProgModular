@@ -12,9 +12,11 @@ public abstract class Veiculo {
     protected int kmRodados;
     protected Queue<Manutencao> manutencaos;
 
-    public Veiculo(String placa, Tanque tanque){
+    public Veiculo(String placa, int capacidade, Combustivel combustivel){
         setPlaca(placa);
-        setTanque(tanque);
+        tanque.setCapacidade(capacidade);
+        tanque.setCombustivel(combustivel);
+        kmRodados = 0;
     }
 
     public String getPlaca() {
@@ -25,17 +27,27 @@ public abstract class Veiculo {
         return tanque;
     }
 
+    public double getDespesaAtual() {
+        return despesaAtual;
+    }
+
     public void setPlaca(String placa) {
         this.placa = placa;
     }
 
-    public void setTanque(Tanque tanque) {
-        this.tanque = tanque;
+    public void setTanque(int capacidade, Combustivel combustivel) {
+        tanque.setCapacidade(capacidade);
+        tanque.setCombustivel(combustivel);
+    }
+
+    public void setDespesaAtual(double despesaAtual){
+        this.despesaAtual = despesaAtual;
     }
 
     public void addRota(Date dateTime, int kmTotal){
         Rota rota = new Rota(dateTime, kmTotal);
         rotas.add(rota);
+        kmRodados += kmTotal;
     }
 
     public double reabastecer(){
@@ -49,4 +61,7 @@ public abstract class Veiculo {
     public double fazerManutencao(){
         return 20;
     }
+
+    public abstract void calcularDespesaAtual();
+
 }
