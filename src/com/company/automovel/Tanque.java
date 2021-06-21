@@ -40,7 +40,7 @@ public class Tanque {
     }
 
     public  void consumir(int KmRodados){
-            quantidade -= KmRodados/combustivel.getConsumo();
+            quantidade -= KmRodados/combustivel.getConsumo(); // adicionar execessão para valores negativos
     }
 
     public double reabastecer(int litros){
