@@ -32,6 +32,14 @@ public abstract class Veiculo {
         return despesaAtual;
     }
 
+    public int getKmRodados() {
+        return kmRodados;
+    }
+
+    public void setKmRodados(int kmRodados) {
+        this.kmRodados = kmRodados;
+    }
+
     public void setPlaca(String placa) {
         this.placa = placa;
     }
@@ -46,18 +54,18 @@ public abstract class Veiculo {
     }
 
     public void addRota(Date dateTime, int kmTotal){
-        Rota rota = new Rota(dateTime, kmTotal);
+        /*Rota rota = new Rota(dateTime, kmTotal);
         rotas.add(rota);
         tanque.consumir(kmTotal);
-        kmRodados += kmTotal;
-        /*if(kmTotal <= tanque.getQuantidade()*tanque.getCombustivel().getConsumo()){
+        kmRodados += kmTotal;*/
+        if(kmTotal <= tanque.getQuantidade()*tanque.getCombustivel().getConsumo()){
             Rota rota = new Rota(dateTime, kmTotal);
             rotas.add(rota);
             tanque.consumir(kmTotal);
             kmRodados += kmTotal;
         }else {
             System.out.println("Não é possivel percorrer a rota. Combustivel insuficiente para o percusso.");
-        }*/
+        }
 
     }
 
