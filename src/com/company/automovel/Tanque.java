@@ -5,6 +5,10 @@ public class Tanque {
     private double quantidade;
     private Combustivel combustivel;
 
+    public Tanque(){
+        quantidade = 0;
+    }
+
     public Tanque(double capacidade, Combustivel combustivel){
         this.capacidade = capacidade;
         this.combustivel = combustivel;

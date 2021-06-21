@@ -6,7 +6,7 @@ import java.util.*;
 
 public abstract class Veiculo {
     private String placa;
-    private Tanque tanque;
+    private Tanque tanque = new Tanque();
     protected Set<Rota> rotas;
     protected double despesaAtual;
     protected int kmRodados;
