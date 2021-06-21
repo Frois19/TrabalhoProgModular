@@ -47,6 +47,7 @@ public class Tanque {
         if (getQuantidade()+litros <= getCapacidade()){ // quatidade abastecida não supera a capacidade
             setQuantidade(litros);
         } else { // quantidade abastecida supera a capacidade
+            System.out.println("Quantidade abastecida supera a capacidade do tanque. O tanque sera abastecido ate que fique em sua capacidade maxima.");
             setQuantidade(getCapacidade());
         }
         return getQuantidade();

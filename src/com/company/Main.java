@@ -12,8 +12,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Date data = new Date();
+        //Testando aplicação
 
+        Date data = new Date(); //Criando data para utilização nos metodos necessarios
+
+        //Criando veiculos
         System.out.println("\nCriando veiculos:");
 
         //Criar novo carro
