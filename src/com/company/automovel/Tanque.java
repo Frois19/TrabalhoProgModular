@@ -36,8 +36,15 @@ public class Tanque {
     }
 
     public  void consumir(int KmRodados){
+            quantidade -= KmRodados/combustivel.getConsumo();
     }
+
     public double reabastecer(int litros){
-        return 20;
+        if (getQuantidade()+litros <= getCapacidade()){ // quatidade abastecida não supera a capacidade
+            setQuantidade(litros);
+        } else { // quantidade abastecida supera a capacidade
+            setQuantidade(getCapacidade());
+        }
+        return getQuantidade();
     }
 }

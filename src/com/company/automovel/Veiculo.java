@@ -2,11 +2,9 @@ package com.company.automovel;
 
 import com.company.manutencao.Manutencao;
 
-import java.util.Date;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
-public class Veiculo {
+public abstract class Veiculo {
     private String placa;
     private Tanque tanque;
     protected Set<Rota> rotas;
@@ -36,11 +34,16 @@ public class Veiculo {
     }
 
     public void addRota(Date dateTime, int kmTotal){
-
+        Rota rota = new Rota(dateTime, kmTotal);
+        rotas.add(rota);
     }
 
     public double reabastecer(){
-        return 20;
+        int litros;
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("Litragem a ser abastecida: ");
+        litros = leitor.nextInt();
+        return tanque.reabastecer(litros);
     }
 
     public double fazerManutencao(){
