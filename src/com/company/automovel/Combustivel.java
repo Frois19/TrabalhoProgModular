@@ -1,7 +1,7 @@
 package com.company.automovel;
 
 public enum Combustivel {
-    Diesel(1), Alcool(2), Gasolina(3);
+    Diesel(1), Gasolina(2), Alcool(3);
 
     private int valor;
     private double consumo;
@@ -24,6 +24,7 @@ public enum Combustivel {
     public double getConsumo(){
         return consumo;
     }
+
     public double getPrecoMedio(){
         return precoMedio;
     }
