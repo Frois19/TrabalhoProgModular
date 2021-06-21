@@ -45,9 +45,15 @@ public abstract class Veiculo {
     }
 
     public void addRota(Date dateTime, int kmTotal){
-        Rota rota = new Rota(dateTime, kmTotal);
-        rotas.add(rota);
-        kmRodados += kmTotal;
+        if(kmTotal <= tanque.getQuantidade()*tanque.getCombustivel().getConsumo()){
+            Rota rota = new Rota(dateTime, kmTotal);
+            rotas.add(rota);
+            tanque.consumir(kmTotal);
+            kmRodados += kmTotal;
+        }else {
+            System.out.println("Não é possivel percorrer a rota. Combustivel insuficiente para o percusso.");
+        }
+
     }
 
     public double reabastecer(){
