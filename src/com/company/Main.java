@@ -25,7 +25,7 @@ public class Main {
         System.out.println("\tPlaca: " + carro.getPlaca());
         System.out.println("\tCapacidade do tanque: " + carro.getTanque().getCapacidade());
         System.out.println("\tTipo de combustivel: " + carro.getTanque().getCombustivel());
-
+/*
         //Criar nova van
         Van van = new Van("guh6753", Combustivel.Diesel);
         System.out.println("\nVan:");
@@ -46,30 +46,34 @@ public class Main {
         System.out.println("\tPlaca: " + caminhao.getPlaca());
         System.out.println("\tCapacidade do tanque: " + caminhao.getTanque().getCapacidade());
         System.out.println("\tTipo de combustivel: " + caminhao.getTanque().getCombustivel());
-
+*/
         //Abastecendo veiculos
         System.out.println("\nAbastecendo veiculos");
 
         //carro
         System.out.println("\nCarro:");
         System.out.println("Quantidade de combustivel antes do abastecimento: " + carro.getTanque().getQuantidade());
-        System.out.println("Quantidade de combustivel depois do abastecimento: " + carro.reabastecer());
-
+        System.out.println("Valor do reabastecimento: " + carro.reabastecer());
+        System.out.println("Quantidade de combustivel depois do abastecimento: " + carro.getTanque().getQuantidade());
+/*
         //van
         System.out.println("\nVan:");
         System.out.println("Quantidade de combustivel antes do abastecimento: " + van.getTanque().getQuantidade());
-        System.out.println("Quantidade de combustivel depois do abastecimento: "+ van.reabastecer());
+        System.out.println("Valor do reabastecimento: "+ van.reabastecer());
+        System.out.println("Quantidade de combustivel Depois do abastecimento: " + van.getTanque().getQuantidade());
 
         //furgao
         System.out.println("\nFurgao:");
         System.out.println("Quantidade de combustivel antes do abastecimento: " + furgao.getTanque().getQuantidade());
-        System.out.println("Quantidade de combustivel depois do abastecimento: "+ furgao.reabastecer());
+        System.out.println("Valor do reabastecimento: "+ furgao.reabastecer());
+        System.out.println("Quantidade de combustivel depois do abastecimento: "+ furgao.getTanque().getQuantidade());
 
         //caminhao
         System.out.println("\nCaminhao:");
         System.out.println("Quantidade de combustivel antes do abastecimento: " + caminhao.getTanque().getQuantidade());
-        System.out.println("Quantidade de combustivel depois do abastecimento: "+ caminhao.reabastecer());
-
+        System.out.println("Valor do reabastecimento:  "+ caminhao.reabastecer());
+        System.out.println("Quantidade de combustivel depois do abastecimento: "+ caminhao.getTanque().getQuantidade());
+*/
         //adicinando rotas
         System.out.println("\nAdicionando rotas:");
 
@@ -78,7 +82,7 @@ public class Main {
         carro.addRota(data,20);
         System.out.println("Quilometros da rodados: " + carro.getKmRodados());
         System.out.println("Quantidade de combustivel restante: " + carro.getTanque().getQuantidade());
-
+    /*
         //van
         System.out.println("\nVan:");
         van.addRota(data,40);
@@ -96,6 +100,10 @@ public class Main {
         caminhao.addRota(data,80);
         System.out.println("Quilometros da rodados: " + caminhao.getKmRodados());
         System.out.println("Quantidade de combustivel restante: " + caminhao.getTanque().getQuantidade());
+        */
+
+        System.out.println(carro.fazerManutencao());
+
 
     }
 }

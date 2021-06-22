@@ -18,6 +18,7 @@ public abstract class Veiculo {
         tanque.setCapacidade(capacidade);
         tanque.setCombustivel(combustivel);
         kmRodados = 0;
+        despesaAtual = 0;
     }
 
     public String getPlaca() {
@@ -68,17 +69,16 @@ public abstract class Veiculo {
     }
 
     public double reabastecer(){
-        int litros;
+        double litros;
+        double valor;
         Scanner leitor = new Scanner(System.in);
         System.out.println("Litragem a ser abastecida: ");
-        litros = leitor.nextInt();
-        return tanque.reabastecer(litros);
+        litros = leitor.nextDouble();
+        valor = tanque.reabastecer(litros);
+        despesaAtual+= valor;
+        return valor;
     }
 
-    public double fazerManutencao(){
-        return 20;
-    }
-
-    public abstract void calcularDespesaAtual();
+    public abstract double fazerManutencao();
 
 }

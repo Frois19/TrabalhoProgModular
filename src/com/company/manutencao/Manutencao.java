@@ -38,11 +38,11 @@ public class Manutencao {
     }
 
     public int proximaManutencao(){
-        return 20;
+        return plano.proximaManutencao(kmRodados);
     }
 
-    public void registrarManutencao(int KmRodaddos){
-
+    public void registrarManutencao(int KmRodados){
+        System.out.println("Manutenção feita em " + kmRodados + "km.");
     }
 
 }
