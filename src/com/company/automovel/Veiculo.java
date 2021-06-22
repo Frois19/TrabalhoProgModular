@@ -2,6 +2,7 @@ package com.company.automovel;
 
 import com.company.manutencao.Manutencao;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.HashSet;
 
@@ -78,7 +79,13 @@ public abstract class Veiculo {
         despesaAtual+= valor;
         return valor;
     }
+    public String toString() {
+    	StringBuilder sb = new StringBuilder(this.placa);
+    	sb.append("\nKMRodados: "+ this.kmRodados+"\n");
+    	sb.append("---------------------------------------------\n");
+        return sb.toString();
+    }
 
-    public abstract double fazerManutencao();
+    public abstract double fazerManutencao() throws IOException;
 
 }

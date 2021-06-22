@@ -1,8 +1,14 @@
 package com.company.manutencao;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Date;
 
-public class Manutencao {
+import com.company.automovel.Veiculo;
+
+public class Manutencao implements IManutencao {
     private Date data;
     private int kmRodados;
     private IManutencao plano;
@@ -37,12 +43,20 @@ public class Manutencao {
         this.plano = plano;
     }
 
-    public int proximaManutencao(){
-        return plano.proximaManutencao(kmRodados);
-    }
-
     public void registrarManutencao(int KmRodados){
+    	setKmRodados(KmRodados);
         System.out.println("Manutenção feita em " + kmRodados + "km.");
     }
+
+	@Override
+	public int proximaManutencao(int kmManutencao) {
+		return kmManutencao - kmRodados;
+	}
+
+	@Override
+	public double getValorManutencao() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }

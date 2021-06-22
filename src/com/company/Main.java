@@ -6,11 +6,12 @@ import com.company.automovel.tipo.Carro;
 import com.company.automovel.tipo.Furgao;
 import com.company.automovel.tipo.Van;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Testando aplicação
 
@@ -103,7 +104,5 @@ public class Main {
         */
 
         System.out.println(carro.fazerManutencao());
-
-
     }
 }
